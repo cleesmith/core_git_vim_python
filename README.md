@@ -1,7 +1,7 @@
 ### Dec 22, 2014:
-> The files ```core.gz``` and ```core_remaster_2014dec22.iso``` are the
-remastered version of ```Core-current.iso``` which include git, vim,
-and python (includes easy_install).
+> The files ```core.gz``` and ```core_remaster_2014dec22.iso``` 
+include git, vim, and python (includes easy_install).  They are
+remastered from ```Core-current.iso```.
 
 ***
 ***
