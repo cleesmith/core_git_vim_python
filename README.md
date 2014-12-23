@@ -1,5 +1,5 @@
 ### Dec 22, 2014:
-> The files ```core.gz``` and ```core_remaster_2014dec22.iso``` 
+The files ```core.gz``` and ```core_remaster_2014dec22.iso``` 
 include **git, vim, and python with easy_install**.  They are
 remastered from ```Core-current.iso``` at
 [Tiny Core](http://distro.ibiblio.org/tinycorelinux/downloads.html "Tiny Core").
