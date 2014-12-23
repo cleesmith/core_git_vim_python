@@ -26,7 +26,7 @@ after booting the new core:
 ```
 git clone whatever
 ```
-... causes a the following error:
+... causes the following error:
 > error: SSL certificate problem: ...
 ... this fixes it (for now):
 ```
