@@ -5,11 +5,11 @@ remastered from ```Core-current.iso``` from
 [Tiny Core](http://distro.ibiblio.org/tinycorelinux/downloads.html "Tiny Core").
 
 #### requirements
+* build's were on Ubuntu 14.04.1 LTS server
 * gzip
 * squashfs-tools
 * cpio
 * mkisofs
-* built on Ubuntu 14.04.1 LTS
 * tested using [QEMU](http://wiki.qemu.org/ "QEMU"):
 
 > qemu-system-x86_64 -m 512 -cdrom core_remaster_2014dec22.iso -boot d -net nic -net user,hostfwd=tcp:127.0.0.1:8008-:80
