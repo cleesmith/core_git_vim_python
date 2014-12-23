@@ -5,8 +5,10 @@ remastered from ```Core-current.iso``` from:
 http://distro.ibiblio.org/tinycorelinux/downloads.html
 
 #### usage
-* git clone https://github.com/cleesmith/core_git_vim_python.git
-* sudo make git_vim_python
+```
+git clone https://github.com/cleesmith/core_git_vim_python.git
+sudo make git_vim_python
+```
 * see the Makefile for details
 
 ***
