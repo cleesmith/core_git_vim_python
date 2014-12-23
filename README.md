@@ -9,6 +9,9 @@ remastered from ```Core-current.iso``` from
 * squashfs-tools
 * cpio
 * mkisofs
+* built on Ubuntu 14.04.1 LTS
+* tested using [QEMU](http://wiki.qemu.org/ "QEMU"):
+> qemu-system-x86_64 -m 512 -cdrom core_remaster_2014dec22.iso -boot d -net nic -net user,hostfwd=tcp:127.0.0.1:8008-:80
 
 #### usage
 ```
