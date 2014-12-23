@@ -21,7 +21,8 @@ sudo make git_vim_python
 ***
 These scripts/files were modified from the project at
 [tinycore-scripted-remaster-2](https://github.com/clwillingham/tinycore-scripted-remaster-2 "tinycore-scripted-remaster-2")
-... original readme:
+
+The original readme follows:
 ***
 ***
 
