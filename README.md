@@ -34,7 +34,7 @@ git clone whatever
 git config --global http.sslVerify false
 ```
 
-> 
+> ...
 
 ***
 ***
@@ -45,7 +45,7 @@ The original readme follows:
 ***
 ***
 
-> 
+> ...
 
 # Tinycore Scripted Remaster 2.0
 ============================================
