@@ -21,6 +21,18 @@ sudo make git_vim_python
 ```
 * see the Makefile for details
 
+#### unresolved issue
+after booting the new core:
+```
+git clone whatever
+```
+... causes a the following error:
+> error: SSL certificate problem: ...
+... this fixes it (for now):
+```
+git config --global http.sslVerify false
+```
+
 ***
 ***
 These scripts/files were modified from the project at
