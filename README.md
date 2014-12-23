@@ -4,6 +4,12 @@ include git, vim, and python (includes easy_install).  They are
 remastered from ```Core-current.iso``` from:
 http://distro.ibiblio.org/tinycorelinux/downloads.html
 
+#### requirements
+* gzip
+* squashfs-tools
+* cpio
+* mkisofs
+
 #### usage
 ```
 git clone https://github.com/cleesmith/core_git_vim_python.git
