@@ -9,9 +9,11 @@ sudo make git_vim_python
 > see the Makefile for details
 
 ***
+***
 These scripts/files were modified from the project at
 https://github.com/clwillingham/tinycore-scripted-remaster-2
 ... original readme:
+***
 ***
 
 # Tinycore Scripted Remaster 2.0
