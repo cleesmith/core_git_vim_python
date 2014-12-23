@@ -10,7 +10,7 @@ remastered from ```Core-current.iso``` from
 * squashfs-tools
 * cpio
 * mkisofs
-* tested using [QEMU](http://wiki.qemu.org/ "QEMU"):
+* tested using [QEMU](http://wiki.qemu.org/ "QEMU") on OS X:
 
 > qemu-system-x86_64 -m 512 -cdrom core_remaster_2014dec22.iso -boot d -net nic -net user,hostfwd=tcp:127.0.0.1:8008-:80
 
