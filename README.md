@@ -23,7 +23,7 @@ sudo make git_vim_python
 * see the ```Makefile``` for details, or to add special handling for a ```.tcz``` extension
 
 #### unresolved issue
-after booting the new core:
+after booting with the remastered core:
 ```
 git clone whatever
 ```
