@@ -3,6 +3,11 @@
 include git, vim, and python (includes easy_install).  They are
 remastered from ```Core-current.iso```.
 
+#### usage
+git clone https://github.com/cleesmith/core_git_vim_python.git
+sudo make git_vim_python
+> see the Makefile for details
+
 ***
 These scripts/files were modified from the project at
 https://github.com/clwillingham/tinycore-scripted-remaster-2
