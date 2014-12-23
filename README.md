@@ -29,7 +29,7 @@ git clone whatever
 ```
 ... causes the following error:
 ```
-error: SSL certificate problem: ...
+error: SSL certificate problem: . . .
 ```
 
 ... this fixes it (for now):
