@@ -4,6 +4,8 @@ include git, vim, and python (includes easy_install).  They are
 remastered from ```Core-current.iso```.
 
 ***
+These scripts/files were modified from the project at
+https://github.com/clwillingham/tinycore-scripted-remaster-2
 ***
 
 # Tinycore Scripted Remaster 2.0
