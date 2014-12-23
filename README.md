@@ -36,6 +36,7 @@ error: SSL certificate problem: . . .
 ```
 git config --global http.sslVerify false
 ```
+... anyone know of a solution ?
 
 >
 ***
