@@ -1,0 +1,49 @@
+
+all: clean unpack buildextra include buildiso
+
+git_vim_python: clean unpack unsquash overlay buildextra include buildiso
+
+unpack:
+	sudo mkdir -p /mnt/tmp 
+	sudo mount Core-current.iso /mnt/tmp -o loop,ro
+	mkdir -p bin/
+	mkdir -p bin/newiso
+	mkdir -p bin/overlay
+	sudo cp -a /mnt/tmp/* bin/newiso/
+	sudo umount /mnt/tmp
+	sudo rm /mnt/tmp -r
+
+clean:
+	rm -rf bin
+	rm -f core_remaster_2014dec22.iso
+
+addextensions:
+	mkdir -p bin/newiso/cde/optional
+	cp -rf src/packages/* bin/newiso/cde/optional/
+	ls -1 bin/newiso/cde/optional > bin/newiso/cde/onboot.lst
+	cp bin/newiso/cde/onboot.lst bin/newiso/cde/copy2fs.lst
+	cp bin/newiso/cde/onboot.lst bin/newiso/cde/xbase.lst
+
+include:
+	cp -rf src/include/* bin/newiso
+	
+
+buildextra:
+	mkdir -p bin/extra
+	cp -r src/extra/* -r bin/extra
+	cd bin/extra/; find | cpio -o -H newc | gzip -2 > ../newiso/boot/extra.gz
+
+buildiso:
+	cp -f src/isolinux.cfg bin/newiso/boot/isolinux/isolinux.cfg
+	mkisofs -l -J -R -V TC-custom -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -o core_remaster_2014dec22.iso bin/newiso
+
+run:
+	kvm --cdrom core_remaster_2014dec22.iso
+
+unsquash:
+	./unsquash.sh
+
+overlay:
+	mv ./bin/newiso/boot/core.gz ./bin/overlays
+	find ./bin/overlays -type f | xargs cat > ./bin/newiso/boot/core2.gz
+	mv ./bin/newiso/boot/core2.gz ./bin/newiso/boot/core.gz
