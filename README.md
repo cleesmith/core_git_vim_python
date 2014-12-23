@@ -7,6 +7,7 @@ remastered from ```Core-current.iso```
 #### usage
 * git clone https://github.com/cleesmith/core_git_vim_python.git
 * sudo make git_vim_python
+
 > see the Makefile for details
 
 ***
