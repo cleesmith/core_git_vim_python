@@ -2,7 +2,7 @@
 > The files ```core.gz``` and ```core_remaster_2014dec22.iso``` 
 include git, vim, and python (includes easy_install).  They are
 remastered from ```Core-current.iso``` from:
-http://distro.ibiblio.org/tinycorelinux/downloads.html
+[Tiny Core](http://distro.ibiblio.org/tinycorelinux/downloads.html "Tiny Core")
 
 #### requirements
 * gzip
@@ -20,7 +20,7 @@ sudo make git_vim_python
 ***
 ***
 These scripts/files were modified from the project at
-[tinycore-scripted-remaster-2](https://github.com/clwillingham/tinycore-scripted-remaster-2 "tinycore-scripted-remaster-2")
+[tinycore-scripted-remaster-2](https://github.com/clwillingham/tinycore-scripted-remaster-2 "tinycore-scripted-remaster-2").
 
 The original readme follows:
 ***
