@@ -34,7 +34,8 @@ git clone whatever
 git config --global http.sslVerify false
 ```
 
->
+> 
+
 ***
 ***
 These scripts/files were modified from the project at
@@ -43,7 +44,8 @@ These scripts/files were modified from the project at
 The original readme follows:
 ***
 ***
->
+
+> 
 
 # Tinycore Scripted Remaster 2.0
 ============================================
