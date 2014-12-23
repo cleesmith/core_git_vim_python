@@ -1,3 +1,11 @@
+### Dec 22, 2014:
+> The files ```core.gz``` and ```core_remaster_2014dec22.iso``` are the
+remastered version of ```Core-current.iso``` which include git, vim,
+and python (includes easy_install).
+
+***
+***
+
 # Tinycore Scripted Remaster 2.0
 ============================================
 This project was originally created to develop a small distro, it was then abandoned when I got swamped with work and moved onto other things. Now i have moved back to this project to develop another distro sort of thing. Seeing as tinycore has changed a bit since i last used this project, i've re-written/removed nearly all of the scripts to take advantage of the new features.
