@@ -43,7 +43,7 @@ git config --global http.sslVerify false
 These scripts/files were modified from the project at
 [tinycore-scripted-remaster-2](https://github.com/clwillingham/tinycore-scripted-remaster-2 "tinycore-scripted-remaster-2").
 
-The original readme follows:
+In case it disappears, the original readme follows:
 
 >
 ***
