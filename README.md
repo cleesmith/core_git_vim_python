@@ -5,7 +5,7 @@ remastered from ```Core-current.iso``` from
 [Tiny Core](http://distro.ibiblio.org/tinycorelinux/downloads.html "Tiny Core").
 
 #### requirements
-* build's were on Ubuntu 14.04.1 LTS VirtualBox server
+* build's were on a Ubuntu 14.04.1 LTS VirtualBox server
 * gzip
 * squashfs-tools
 * cpio
