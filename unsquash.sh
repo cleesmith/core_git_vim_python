@@ -18,6 +18,7 @@ do
 		echo "copy squashfs-root to cls_packages ..."
 		cp -rf /home/cleesmith/tinycore_scripted_remaster_2/src/packages/squashfs-root /home/cleesmith/tinycore_scripted_remaster_2cls_packages/
 	fi
+	ldconfig -r squashfs-root
 	find | cpio -o -H newc | gzip -2 > ../../../bin/overlays/$f.gz
 	cd ..
 	rm -r squashfs-root

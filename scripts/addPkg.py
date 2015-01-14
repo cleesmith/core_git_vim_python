@@ -21,7 +21,6 @@ def getDeps(pkg=""):
 	except urllib2.HTTPError, e:
 		print "no deps"
 		return ['']
-
 	deps = response.read().split('\n')
 	for dep in deps:
 		if len(dep) > 0 and dep != ' ':
@@ -29,8 +28,6 @@ def getDeps(pkg=""):
 			if dep not in alldeps:
 				alldeps.append(dep)
 				getDeps(dep)
-	
-	
 	return deps
 
 def downloadPkg(pkg=""):
@@ -40,7 +37,6 @@ def downloadPkg(pkg=""):
 		os.system("mv " + pkg + " ../src/include/cde/optional/")
 	else:
 		print "\t file already downloaded"
-
 	getDeps(pkg)
 	#print alldeps.length + " Depencencies need to be downloaded"
 	for dep in alldeps:
@@ -49,7 +45,6 @@ def downloadPkg(pkg=""):
 			os.system("mv " + dep + " ../src/include/cde/optional/")
 		else:
 			print "\t" + dep + " already downloaded"
-	
 	
 downloadPkg(sys.argv[1])
 

@@ -1,0 +1,27 @@
+remaster steps:
+1. make clean
+2. make unpack
+3. cd /home/cleesmith/tinycore_scripted_remaster_2/src/packages
+[don't] 4. wget http://distro.ibiblio.org/tinycorelinux/5.x/x86/tcz/python-dev.tcz
+[don't] 5. wget http://distro.ibiblio.org/tinycorelinux/5.x/x86/tcz/compiletc.tcz
+6. wget http://distro.ibiblio.org/tinycorelinux/5.x/x86/tcz/nano.tcz
+7. sudo make unsquash
+    - not sure why this must be run as sudo ?
+    - this uses unsquashfs, ldconfig, and cpio to create .gz files that are used as 
+      overlays for core.gz ... effectively installing the .tcz packages,
+      but note that in some install special handling is needed:
+      e.g. python requires a symlink
+    - the .gz files created will be in bin/overlays/
+8. sudo make overlay
+    - mixes core.gz from Core-current.iso, actually from bin/newiso/boot/core.gz via unpack,
+      in with the .gz files in bin/overlays/
+    - cat all .gz files into core2.gz
+    - does a mv to replace the old core.gz with core2.gz
+9. sudo make include
+    - adds packages from src/include/* to bin/newios/cde/optional/
+10. sudo make buildiso
+      - this is optional, if we are only after core.gz,
+        but it may help to spot errors
+11. add virtualenv to home qcow
+12. change bootlocal.sh on opt qcow so python is found
+13. get dropbear working for ssh ???
