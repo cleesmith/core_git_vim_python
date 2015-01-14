@@ -1,6 +1,7 @@
-### Dec 22, 2014:
-The files ```core.gz``` and ```core_remaster_2014dec22.iso``` 
-include **git, vim, and python with easy_install**.  They are
+### Jan 14, 2015:
+
+The file ```core.gz```
+includes **git, vim, and python with easy_install**.  They are
 remastered from ```Core-current.iso``` at
 [Tiny Core](http://distro.ibiblio.org/tinycorelinux/downloads.html "Tiny Core").
 
@@ -9,7 +10,11 @@ remastered from ```Core-current.iso``` at
 * sudo apt-get install **gzip squashfs-tools cpio mkisofs**
 * tested using [QEMU](http://wiki.qemu.org/ "QEMU") on OS X:
 
-> **qemu-system-x86_64** -m 512 -cdrom **core_remaster_2014dec22.iso** -boot d -net nic -net user,hostfwd=tcp:127.0.0.1:8008-:80
+> qemu-system-x86_64 -m 512 -kernel vmlinuz -initrd core.gz -append "quiet"
+
+or, if you created an .iso file:
+
+> qemu-system-x86_64 -m 512 -cdrom **core_remaster_2015?????.iso** -boot d
 
 #### usage
 ```

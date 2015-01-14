@@ -25,3 +25,8 @@ remaster steps:
 11. add virtualenv to home qcow
 12. change bootlocal.sh on opt qcow so python is found
 13. get dropbear working for ssh ???
+
+... extract core.gz:
+zcat core.gz | sudo cpio -i -d
+find | cpio -o -H newc | gzip -9 > core.gz
+advdef -z4 core.gz

@@ -47,3 +47,5 @@ overlay:
 	mv ./bin/newiso/boot/core.gz ./bin/overlays
 	find ./bin/overlays -type f | xargs cat > ./bin/newiso/boot/core2.gz
 	mv ./bin/newiso/boot/core2.gz ./bin/newiso/boot/core.gz
+	advdef -z4 ./bin/newiso/boot/core.gz
+
