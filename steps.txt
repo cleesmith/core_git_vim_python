@@ -1,32 +1,59 @@
 remaster steps:
-1. make clean
-2. make unpack
-3. cd /home/cleesmith/tinycore_scripted_remaster_2/src/packages
-[don't] 4. wget http://distro.ibiblio.org/tinycorelinux/5.x/x86/tcz/python-dev.tcz
-[don't] 5. wget http://distro.ibiblio.org/tinycorelinux/5.x/x86/tcz/compiletc.tcz
-6. wget http://distro.ibiblio.org/tinycorelinux/5.x/x86/tcz/nano.tcz
-7. sudo make unsquash
-    - not sure why this must be run as sudo ?
+1. only do this once, or if the packages are updated:
+cd /home/cleesmith/tinycore_scripted_remaster_2/src/packages
+wget http://distro.ibiblio.org/tinycorelinux/5.x/x86/tcz/nano.tcz
+[don't] wget http://distro.ibiblio.org/tinycorelinux/5.x/x86/tcz/python-dev.tcz
+[don't] wget http://distro.ibiblio.org/tinycorelinux/5.x/x86/tcz/compiletc.tcz
+2. make clean
+3. make unpack
+    ... extract core.gz:
+    mkdir extract_core
+    cd extract_core
+    cp ../bin/newiso/boot/core.gz .
+    ... unpack the initrd image to reveal the entire file system structure:
+    zcat core.gz | sudo cpio -i -d
+
+    ... perform changes:
+    sudo nano opt/bootlocal.sh
+      - add symlinks for python
+    ... setup virtualenv
+    cd home
+    sudo curl -O https://pypi.python.org/packages/source/v/virtualenv/virtualenv-12.0.5.tar.gz
+    tar xzf virtualenv-12.0.5.tar.gz
+    rm -rf virtualenv-12.0.5.tar.gz
+
+    ... remove the old core.gz:
+    rm core.gz
+    ... pack to create the new core.gz with modifications:
+    sudo find | sudo cpio -o -H newc | sudo gzip -2 > core.gz
+    ... compress it even more, as this doesn't affect boot up speed, but it does help downloads:
+    sudo advdef -z4 core.gz ... this runs for a while
+    cp core.gz ../bin/newiso/boot/
+4. cd ..
+5. sudo make unsquash
+    - not sure why this must be run as sudo ? to perserve permissions ?
     - this uses unsquashfs, ldconfig, and cpio to create .gz files that are used as 
       overlays for core.gz ... effectively installing the .tcz packages,
-      but note that in some install special handling is needed:
-      e.g. python requires a symlink
+      but note that for some packages the install requires special handling:
+      e.g. python requires an untar and symlink
     - the .gz files created will be in bin/overlays/
-8. sudo make overlay
+6. sudo make overlay
     - mixes core.gz from Core-current.iso, actually from bin/newiso/boot/core.gz via unpack,
       in with the .gz files in bin/overlays/
     - cat all .gz files into core2.gz
     - does a mv to replace the old core.gz with core2.gz
-9. sudo make include
-    - adds packages from src/include/* to bin/newios/cde/optional/
-10. sudo make buildiso
-      - this is optional, if we are only after core.gz,
-        but it may help to spot errors
-11. add virtualenv to home qcow
-12. change bootlocal.sh on opt qcow so python is found
-13. get dropbear working for ssh ???
+Optional steps, only if building an .iso file:
+  7. sudo make include
+      - adds packages from src/include/* to bin/newios/cde/optional/
+  8. sudo make buildiso
+9. add virtualenv to home qcow
+10. change bootlocal.sh on opt qcow so python is found
+11. get dropbear working for ssh ???
 
-... extract core.gz:
-zcat core.gz | sudo cpio -i -d
-find | cpio -o -H newc | gzip -9 > core.gz
-advdef -z4 core.gz
+
+
+
+
+
+
+
